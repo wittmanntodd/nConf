@@ -25,15 +25,11 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_color_change_percent = 10
 let g:indent_guides_tab_guides = 0
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" youcompleteme
+let g:ycm_extra_conf_globlist = ['~/mantis-top/*']
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_filetype_whitelist = { '*': 1 }
 
 " solarized scheme
 set background=dark
@@ -42,6 +38,10 @@ colorscheme solarized
 
 " shortcut to vimrc
 nnoremap <LEADER>ev :e $MYVIMRC<CR>
+
+" shift between header and source
+nnoremap <LEADER>h :e %:r.h<CR>
+nnoremap <LEADER>s :e %:r.cpp<CR>
 
 " source vimrc upon close
 augroup vimrcEx
